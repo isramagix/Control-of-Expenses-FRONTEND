@@ -103,10 +103,17 @@ export const useAuthStore = create<AuthState>()(
       initializeAuth: async () => {
         try {
           set({ isLoading: true });
-          const { token } = get();
+          const { token, user, isAuthenticated } = get();
 
           if (token) {
-            // Verificar que el token siga siendo válido
+            // Si ya tenemos usuario y token, no necesitamos hacer la petición
+            if (user && isAuthenticated) {
+              console.log("✅ Usuario ya autenticado, saltando verificación");
+              set({ isLoading: false });
+              return;
+            }
+
+            // Solo verificar si no tenemos datos de usuario
             try {
               const currentUser = await authService.getProfile();
               set({
@@ -116,6 +123,7 @@ export const useAuthStore = create<AuthState>()(
               });
             } catch {
               // Token inválido, limpiar estado
+              console.log("❌ Token inválido durante inicialización");
               set({
                 user: null,
                 token: null,

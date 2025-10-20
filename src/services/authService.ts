@@ -10,24 +10,19 @@ export const authService = {
     };
 
     console.log("🔐 Enviando datos de login:", loginData);
+    // eslint-disable-next-line no-debugger
+    debugger;
     try {
       const response = await api.post("/auth/login", loginData);
       console.log("✅ Respuesta exitosa del login:", response.data);
 
-      // Guardar el token para las próximas peticiones
-      const { access_token } = response.data;
-
-      // Obtener datos del usuario usando el token
-      const userResponse = await api.get("/auth/me", {
-        headers: { Authorization: `Bearer ${access_token}` },
-      });
-
+      // El backend ya devuelve los datos del usuario en el login
       return {
-        access_token,
+        access_token: response.data.access_token,
         refresh_token: response.data.refresh_token,
         token_type: response.data.token_type,
         expires_in: response.data.expires_in,
-        user: userResponse.data,
+        user: response.data.user, // Usar los datos que ya devuelve el backend
       };
     } catch (error) {
       console.error("❌ Error en login:", error);
@@ -35,6 +30,7 @@ export const authService = {
         const axiosError = error as {
           response?: { status?: number; data?: unknown; headers?: unknown };
         };
+
         console.error("📝 Detalles del error:", {
           status: axiosError.response?.status,
           data: axiosError.response?.data,

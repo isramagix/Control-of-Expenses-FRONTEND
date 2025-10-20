@@ -17,10 +17,29 @@ export const api = axios.create({
 // Interceptor para agregar el token automáticamente
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("authToken");
+    // Obtener el token desde Zustand storage
+    const authStorage = localStorage.getItem("auth-storage");
+    let token = null;
+
+    if (authStorage) {
+      try {
+        const parsedStorage = JSON.parse(authStorage);
+        token = parsedStorage.state?.token;
+      } catch (error) {
+        console.warn("Error parsing auth storage:", error);
+      }
+    }
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
+      console.log(
+        "🔑 Token agregado a la petición:",
+        token.substring(0, 20) + "..."
+      );
+    } else {
+      console.log("⚠️ No se encontró token en el storage");
     }
+
     return config;
   },
   (error) => {
@@ -33,9 +52,9 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Token expirado o inválido
-      localStorage.removeItem("authToken");
-      localStorage.removeItem("user");
+      console.log("🚫 Token inválido o expirado - limpiando storage");
+      // Token expirado o inválido - limpiar el storage de Zustand
+      localStorage.removeItem("auth-storage");
       window.location.href = "/login";
     }
     return Promise.reject(error);
