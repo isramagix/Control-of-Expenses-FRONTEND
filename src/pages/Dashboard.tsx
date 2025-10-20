@@ -44,12 +44,17 @@ const Dashboard = () => {
       {/* Gastos recientes */}
       <div className="bg-white rounded-lg shadow-md">
         <div className="p-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-900">Gastos Recientes</h2>
+          <h2 className="text-xl font-semibold text-gray-900">
+            Gastos Recientes
+          </h2>
         </div>
         <div className="p-6">
           <div className="space-y-4">
             {[1, 2, 3].map((item) => (
-              <div key={item} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div
+                key={item}
+                className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
+              >
                 <div className="flex items-center space-x-4">
                   <div className="text-2xl">🛒</div>
                   <div>

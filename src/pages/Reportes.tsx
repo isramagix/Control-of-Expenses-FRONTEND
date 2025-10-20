@@ -2,7 +2,9 @@ const Reportes = () => {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-900">Reportes y Análisis</h1>
+        <h1 className="text-3xl font-bold text-gray-900">
+          Reportes y Análisis
+        </h1>
         <div className="flex space-x-2">
           <button className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
             📊 Exportar PDF
@@ -80,14 +82,18 @@ const Reportes = () => {
       {/* Gráfico placeholder */}
       <div className="bg-white rounded-lg shadow-md">
         <div className="p-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-900">Evolución de Gastos Mensuales</h2>
+          <h2 className="text-xl font-semibold text-gray-900">
+            Evolución de Gastos Mensuales
+          </h2>
         </div>
         <div className="p-6">
           <div className="h-64 bg-gray-100 rounded-lg flex items-center justify-center">
             <div className="text-center">
               <div className="text-4xl mb-2">📈</div>
               <p className="text-gray-600">Gráfico de tendencias</p>
-              <p className="text-sm text-gray-500">(Se integrará con librería de gráficos)</p>
+              <p className="text-sm text-gray-500">
+                (Se integrará con librería de gráficos)
+              </p>
             </div>
           </div>
         </div>
@@ -97,7 +103,9 @@ const Reportes = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white rounded-lg shadow-md">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Distribución por Categorías</h2>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Distribución por Categorías
+            </h2>
           </div>
           <div className="p-6">
             <div className="h-48 bg-gray-100 rounded-lg flex items-center justify-center">
@@ -111,24 +119,53 @@ const Reportes = () => {
 
         <div className="bg-white rounded-lg shadow-md">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Top 5 Gastos del Mes</h2>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Top 5 Gastos del Mes
+            </h2>
           </div>
           <div className="p-6">
             <div className="space-y-3">
               {[
-                { description: 'Compra supermercado mayorista', amount: 245.50, date: '15/01' },
-                { description: 'Cena restaurante familiar', amount: 180.00, date: '20/01' },
-                { description: 'Gasolina del mes', amount: 150.00, date: '05/01' },
-                { description: 'Consulta médica especialista', amount: 120.00, date: '12/01' },
-                { description: 'Suscripción Netflix + Spotify', amount: 25.98, date: '01/01' },
+                {
+                  description: "Compra supermercado mayorista",
+                  amount: 245.5,
+                  date: "15/01",
+                },
+                {
+                  description: "Cena restaurante familiar",
+                  amount: 180.0,
+                  date: "20/01",
+                },
+                {
+                  description: "Gasolina del mes",
+                  amount: 150.0,
+                  date: "05/01",
+                },
+                {
+                  description: "Consulta médica especialista",
+                  amount: 120.0,
+                  date: "12/01",
+                },
+                {
+                  description: "Suscripción Netflix + Spotify",
+                  amount: 25.98,
+                  date: "01/01",
+                },
               ].map((expense, index) => (
-                <div key={index} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <div
+                  key={index}
+                  className="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
+                >
                   <div>
-                    <p className="font-medium text-gray-900 text-sm">{expense.description}</p>
+                    <p className="font-medium text-gray-900 text-sm">
+                      {expense.description}
+                    </p>
                     <p className="text-xs text-gray-600">{expense.date}</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-semibold text-gray-900">${expense.amount}</p>
+                    <p className="font-semibold text-gray-900">
+                      ${expense.amount}
+                    </p>
                   </div>
                 </div>
               ))}

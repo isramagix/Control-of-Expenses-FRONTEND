@@ -9,11 +9,15 @@ const Configuracion = () => {
         {/* Perfil de usuario */}
         <div className="bg-white rounded-lg shadow-md">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Perfil de Usuario</h2>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Perfil de Usuario
+            </h2>
           </div>
           <div className="p-6 space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Nombre completo
+              </label>
               <input
                 type="text"
                 defaultValue="Juan Pérez"
@@ -21,7 +25,9 @@ const Configuracion = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Email
+              </label>
               <input
                 type="email"
                 defaultValue="juan@ejemplo.com"
@@ -29,7 +35,9 @@ const Configuracion = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Moneda preferida</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Moneda preferida
+              </label>
               <select className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="USD">Dólar (USD)</option>
                 <option value="EUR">Euro (EUR)</option>
@@ -45,23 +53,32 @@ const Configuracion = () => {
         {/* Categorías personalizadas */}
         <div className="bg-white rounded-lg shadow-md">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Categorías de Gastos</h2>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Categorías de Gastos
+            </h2>
           </div>
           <div className="p-6">
             <div className="space-y-3 mb-4">
               {[
-                '🍕 Alimentación',
-                '🚗 Transporte',
-                '🎬 Entretenimiento',
-                '🏥 Salud',
-                '🛒 Compras',
-                '⚡ Servicios',
+                "🍕 Alimentación",
+                "🚗 Transporte",
+                "🎬 Entretenimiento",
+                "🏥 Salud",
+                "🛒 Compras",
+                "⚡ Servicios",
               ].map((category, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div
+                  key={index}
+                  className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+                >
                   <span className="text-gray-900">{category}</span>
                   <div className="flex space-x-2">
-                    <button className="text-blue-600 hover:text-blue-800 text-sm">✏️</button>
-                    <button className="text-red-600 hover:text-red-800 text-sm">🗑️</button>
+                    <button className="text-blue-600 hover:text-blue-800 text-sm">
+                      ✏️
+                    </button>
+                    <button className="text-red-600 hover:text-red-800 text-sm">
+                      🗑️
+                    </button>
                   </div>
                 </div>
               ))}
@@ -75,14 +92,16 @@ const Configuracion = () => {
         {/* Preferencias de notificaciones */}
         <div className="bg-white rounded-lg shadow-md">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Notificaciones</h2>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Notificaciones
+            </h2>
           </div>
           <div className="p-6 space-y-4">
             {[
-              { label: 'Recordatorios de presupuesto', checked: true },
-              { label: 'Alertas de gastos excesivos', checked: true },
-              { label: 'Resumen mensual por email', checked: false },
-              { label: 'Notificaciones push', checked: true },
+              { label: "Recordatorios de presupuesto", checked: true },
+              { label: "Alertas de gastos excesivos", checked: true },
+              { label: "Resumen mensual por email", checked: false },
+              { label: "Notificaciones push", checked: true },
             ].map((notification, index) => (
               <div key={index} className="flex items-center justify-between">
                 <span className="text-gray-900">{notification.label}</span>
@@ -99,11 +118,15 @@ const Configuracion = () => {
         {/* Configuración de presupuesto */}
         <div className="bg-white rounded-lg shadow-md">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Configuración de Presupuesto</h2>
+            <h2 className="text-xl font-semibold text-gray-900">
+              Configuración de Presupuesto
+            </h2>
           </div>
           <div className="p-6 space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Presupuesto mensual</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Presupuesto mensual
+              </label>
               <input
                 type="number"
                 defaultValue="4000"
@@ -111,7 +134,9 @@ const Configuracion = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Día de renovación</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Día de renovación
+              </label>
               <select className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="1">1 de cada mes</option>
                 <option value="15">15 de cada mes</option>
@@ -119,7 +144,9 @@ const Configuracion = () => {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Alerta cuando se alcance (%)</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Alerta cuando se alcance (%)
+              </label>
               <input
                 type="number"
                 defaultValue="80"
@@ -138,13 +165,19 @@ const Configuracion = () => {
       {/* Zona de peligro */}
       <div className="bg-white rounded-lg shadow-md border-l-4 border-red-500">
         <div className="p-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-red-600">Zona de Peligro</h2>
+          <h2 className="text-xl font-semibold text-red-600">
+            Zona de Peligro
+          </h2>
         </div>
         <div className="p-6 space-y-4">
           <div className="flex justify-between items-center">
             <div>
-              <h3 className="font-medium text-gray-900">Exportar todos los datos</h3>
-              <p className="text-sm text-gray-600">Descarga todos tus datos en formato JSON</p>
+              <h3 className="font-medium text-gray-900">
+                Exportar todos los datos
+              </h3>
+              <p className="text-sm text-gray-600">
+                Descarga todos tus datos en formato JSON
+              </p>
             </div>
             <button className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
               📦 Exportar
@@ -153,8 +186,12 @@ const Configuracion = () => {
           <hr className="border-gray-200" />
           <div className="flex justify-between items-center">
             <div>
-              <h3 className="font-medium text-gray-900">Eliminar todos los datos</h3>
-              <p className="text-sm text-gray-600">Esta acción no se puede deshacer</p>
+              <h3 className="font-medium text-gray-900">
+                Eliminar todos los datos
+              </h3>
+              <p className="text-sm text-gray-600">
+                Esta acción no se puede deshacer
+              </p>
             </div>
             <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
               🗑️ Eliminar Todo

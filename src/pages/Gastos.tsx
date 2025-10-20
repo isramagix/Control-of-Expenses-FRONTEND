@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const Gastos = () => {
   const [showModal, setShowModal] = useState(false);
@@ -7,7 +7,7 @@ const Gastos = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold text-gray-900">Gestión de Gastos</h1>
-        <button 
+        <button
           onClick={() => setShowModal(true)}
           className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
         >
@@ -44,30 +44,46 @@ const Gastos = () => {
       {/* Lista de gastos */}
       <div className="bg-white rounded-lg shadow-md">
         <div className="p-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-900">Lista de Gastos</h2>
+          <h2 className="text-xl font-semibold text-gray-900">
+            Lista de Gastos
+          </h2>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="text-left py-3 px-6 font-medium text-gray-900">Fecha</th>
-                <th className="text-left py-3 px-6 font-medium text-gray-900">Descripción</th>
-                <th className="text-left py-3 px-6 font-medium text-gray-900">Categoría</th>
-                <th className="text-left py-3 px-6 font-medium text-gray-900">Monto</th>
-                <th className="text-left py-3 px-6 font-medium text-gray-900">Acciones</th>
+                <th className="text-left py-3 px-6 font-medium text-gray-900">
+                  Fecha
+                </th>
+                <th className="text-left py-3 px-6 font-medium text-gray-900">
+                  Descripción
+                </th>
+                <th className="text-left py-3 px-6 font-medium text-gray-900">
+                  Categoría
+                </th>
+                <th className="text-left py-3 px-6 font-medium text-gray-900">
+                  Monto
+                </th>
+                <th className="text-left py-3 px-6 font-medium text-gray-900">
+                  Acciones
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               {[1, 2, 3, 4, 5].map((item) => (
                 <tr key={item} className="hover:bg-gray-50">
                   <td className="py-4 px-6 text-gray-900">2025-01-15</td>
-                  <td className="py-4 px-6 text-gray-900">Compra supermercado</td>
+                  <td className="py-4 px-6 text-gray-900">
+                    Compra supermercado
+                  </td>
                   <td className="py-4 px-6">
                     <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm">
                       Alimentación
                     </span>
                   </td>
-                  <td className="py-4 px-6 font-medium text-gray-900">$85.50</td>
+                  <td className="py-4 px-6 font-medium text-gray-900">
+                    $85.50
+                  </td>
                   <td className="py-4 px-6">
                     <div className="flex space-x-2">
                       <button className="text-blue-600 hover:text-blue-800 text-sm">
