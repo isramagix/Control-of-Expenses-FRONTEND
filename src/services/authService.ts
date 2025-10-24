@@ -16,13 +16,12 @@ export const authService = {
       const response = await api.post("/auth/login", loginData);
       console.log("✅ Respuesta exitosa del login:", response.data);
 
-      // El backend ya devuelve los datos del usuario en el login
       return {
         access_token: response.data.access_token,
         refresh_token: response.data.refresh_token,
         token_type: response.data.token_type,
         expires_in: response.data.expires_in,
-        user: response.data.user, // Usar los datos que ya devuelve el backend
+        user: response.data.user,
       };
     } catch (error) {
       console.error("❌ Error en login:", error);
