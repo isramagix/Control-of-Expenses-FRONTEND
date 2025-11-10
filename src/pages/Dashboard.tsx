@@ -1,3 +1,56 @@
+import SummaryCards from "../modules/dashboard/components/SummaryCards";
+import RecentExpenses from "../modules/dashboard/components/RecentExpenses";
+import type { SummaryCard } from "../modules/dashboard/components/SummaryCards";
+import type { RecentExpense } from "../modules/dashboard/components/RecentExpenses";
+
+const summaryCards: SummaryCard[] = [
+  {
+    label: "Gastos del Mes",
+    value: "$2,450.00",
+    color: "text-gray-900",
+    icon: "💸",
+  },
+  {
+    label: "Presupuesto Restante",
+    value: "$1,550.00",
+    color: "text-green-600",
+    icon: "💰",
+  },
+  {
+    label: "Ahorro del Mes",
+    value: "$800.00",
+    color: "text-blue-600",
+    icon: "🏦",
+  },
+];
+
+const recentExpenses: RecentExpense[] = [
+  {
+    id: 1,
+    description: "Supermercado",
+    category: "Alimentación",
+    amount: 85.5,
+    timeAgo: "Hace 2 horas",
+    icon: "🛒",
+  },
+  {
+    id: 2,
+    description: "Taxi",
+    category: "Transporte",
+    amount: 20,
+    timeAgo: "Hace 5 horas",
+    icon: "🚕",
+  },
+  {
+    id: 3,
+    description: "Cine",
+    category: "Entretenimiento",
+    amount: 12,
+    timeAgo: "Ayer",
+    icon: "🎬",
+  },
+];
+
 const Dashboard = () => {
   return (
     <div className="space-y-6">
@@ -7,70 +60,8 @@ const Dashboard = () => {
           Nuevo Gasto
         </button>
       </div>
-
-      {/* Resumen de gastos */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Gastos del Mes</p>
-              <p className="text-2xl font-bold text-gray-900">$2,450.00</p>
-            </div>
-            <div className="text-3xl">💸</div>
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Presupuesto Restante</p>
-              <p className="text-2xl font-bold text-green-600">$1,550.00</p>
-            </div>
-            <div className="text-3xl">💰</div>
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600">Ahorro del Mes</p>
-              <p className="text-2xl font-bold text-blue-600">$800.00</p>
-            </div>
-            <div className="text-3xl">🏦</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Gastos recientes */}
-      <div className="bg-white rounded-lg shadow-md">
-        <div className="p-6 border-b border-gray-200">
-          <h2 className="text-xl font-semibold text-gray-900">
-            Gastos Recientes
-          </h2>
-        </div>
-        <div className="p-6">
-          <div className="space-y-4">
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
-              >
-                <div className="flex items-center space-x-4">
-                  <div className="text-2xl">🛒</div>
-                  <div>
-                    <p className="font-medium text-gray-900">Supermercado</p>
-                    <p className="text-sm text-gray-600">Alimentación</p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="font-medium text-gray-900">-$85.50</p>
-                  <p className="text-sm text-gray-600">Hace 2 horas</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <SummaryCards cards={summaryCards} />
+      <RecentExpenses expenses={recentExpenses} />
     </div>
   );
 };
