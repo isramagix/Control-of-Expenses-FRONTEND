@@ -4,9 +4,6 @@ import axios from "axios";
 const API_BASE_URL =
   import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
-console.log("🌐 URL del API configurada:", API_BASE_URL);
-console.log("🔧 Variables de entorno:", import.meta.env);
-
 export const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
